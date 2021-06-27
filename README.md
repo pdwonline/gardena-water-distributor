@@ -1,21 +1,26 @@
-#Lawn sprinkler and microdrip using Gardena water distributor and Home Assistant
+# Home Assistant irrigation using Gardena distributor
 
-As an alternative to complex and expansive valve systems to automate the irrigation of my garden, I found the Gardena water distributor
 
-This device enables me to controll up to 6 zones. Gardena offers a timer controler to automate the process, but you can do it simpler: using Home Assistant to controll the Gardena water distributor!
+This is my project for garden issigation using Home assistant. As an alternative to a complex and expansive set of valves and controllers using Opensprinkler for example, I found an alternative using the [Gardena water distributor](https://www.gardena.com/int/products/watering/water-controls/water-distributor-automatic/966749301/). This device enables me to control up to 6 zones. It is pure mechanical and will switch to the next zone as soon as the water pressure stops. Controlling the device means you have to start/stop the water pressure at a certain sequence. 
 
-The distributor will switch as soon as the water pressure stops. Controlling the device means you have to start/stop the water pressure at a certain sequence. This is what the Gardena controler does.
+I was inspired when I saw that Gardena offers a timer controler to automate the process. I wondered how it works bought the Gardena water distributor and started experimenting with it. Now I can use Home Assistant to control the Gardena water distributor and fully automate the irrigation over 6 zones in my garden.
 
-I emulated this in a couple of automations. the automation uses a switch in my case to switch on/off a pump for water supply. But you could also use a valve to open/close the water supply. (Gardena also has a smart controller with only the on/off function available for this)
+![Gardena water distributor](https://hqvcdn3.azureedge.net/qs_mh=530&mw=850&ver=20210615T082014&hcsh=8CBABCC416FFFA2763FDEFC4FD51204C/_$$_/media/aprimo/gardena/water%20controls/photos/studio/ga210-00xxxx/ga210-0007b.png)
 
-Since the Gardena water distributor is pure mechanical and it does not return any status, I modified a water sensor (standard flood sensor) to sense if there is water in zone 1 f it is selected. This enables me to kalibrate the system so it will detect when it is on zone 1 and then counts on to the correct zone.
+Alhought it would be woth creating an full integration, I just created a couple of automations in the first place. (maybe someone can help me with that later on) The automations use a switch control water supply. I my case this is done by switching on/off a pump for water supply. NOTE: Gardena does not recommend using a hydrophore pump for the water distributor, because is is a mechanical device that could break if the water is not clean. However, I mounted a water filter in front of the device and decided to take te risk. You could alternative switch on/off the regular water supply using a single [valve](https://www.amazon.com/Automation-Z-Wave-Shutoff-Compatiable-Smartthings/dp/B083DNGQRZ/ref=sr_1_5?dchild=1&keywords=zwave+water+valve&qid=1624622632&sr=8-5)
 
-I did'nt create a complete integration yet (maybe someone can help me with that), but is consists of a couple of automations and some helpers.
+The Gardena water distributor is pure mechanical and does not return any status. The Gardena controller apparantly depends on reliable water pressure to keep in sync with the water distrinutor. I decided add a water sensor in zone 1, so there is a means of detecting the current water zone of the distributor. This is handled by the Gardena Calibration automation. It will switch on/off the water pressure until it detects water and then resets the current zone information. When all available zones have been tested this way and no water is detected something might be wrong with the water supply or with the distributor.
 
-Depends on:
+Another automation selects the desire zone and opens the water supply for a desired time. Zone and time can be defined in the UI by some helpers.
 
-switch to switch on/off the water pressure
-flood sensor to sense water on zone 1
+I will create blueprints for the automations in order to share them here
+
+Dependencies:
+- switch to switch on/off the water pressure
+- flood sensor to sense water on zone 1
+- rain sensor (I used a template based on buienalarm to emulate this)
+- [Hass variables custom integration](https://github.com/Wibias/hass-variables) for persistant variables
+
 Helpers for: zone selection, timer value, number of zones, water pressure on delay and dry time for zone 1.
 Hass variables custom integration
 For the UI, I used some extentions (but you could also do without it):
