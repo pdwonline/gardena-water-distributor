@@ -14,7 +14,7 @@ The Gardena water distributor is pure mechanical and does not return any status.
 Another automation (select and play) selects the desire zone and opens the water supply for a desired time. Zone and time can be defined in the UI by some helpers. Finally for each zone can be created a script that sets the desired zone and time and fires the select and play automation. This enables to create some sort of definition per zone. I used the great [scheduler-component](https://github.com/nielsfaber/scheduler-component) from nielsfaber to easily create a schedule for each zone.
 
 ![UI selecting zone](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_2.png) ![UI selecting zone](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_1.png)
-![UI configuration](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_instellingen.png) 
+![UI configuration](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_instellingen.png) ![UI timer](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Timer.png)
 
 In order to share this project, I am creating blueprints from the automations. Updated soon..
 
