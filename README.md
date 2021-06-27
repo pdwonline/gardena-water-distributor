@@ -13,10 +13,10 @@ The Gardena water distributor is pure mechanical and does not return any status.
 
 Another automation (select and play) selects the desire zone and opens the water supply for a desired time. Zone and time can be defined in the UI by some helpers. Finally for each zone can be created a script that sets the desired zone and time and fires the select and play automation. This enables to create some sort of definition per zone. I used the great [scheduler-component](https://github.com/nielsfaber/scheduler-component) to easily create a schedule for each zone.
 
+![UI selecting zone](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_2.png) ![UI selecting zone](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_1.png)
+![UI configuration](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_instellingen.png)
 
-
-
-In order to share this project, I am creating blueprints for the automations in order to share them here
+In order to share this project, I am creating blueprints for the automations..
 
 ## Dependencies:
 - switch to switch on/off the water pressure
@@ -24,11 +24,12 @@ In order to share this project, I am creating blueprints for the automations in 
 - rain sensor (I used a template based on buienalarm to emulate this)
 - [Hass variables custom integration](https://github.com/Wibias/hass-variables) for persistant variables
 
-Helpers for: zone selection, timer value, number of zones, water pressure on delay and dry time for zone 1.
-Hass variables custom integration
-For the UI, I used some extentions (but you could also do without it):
+Helpers for: 
+- zone selection, timer value
+- number of zones, water pressure on delay and dry time for zone 1.
 
-fold_entity_row for uncluttering the UI
-Numberbox for easier number selection
-Secondaryinfo Entity Row for adding secondary_info to some controls
-gardena_kalibartion This automation will perform a fully automatic calibration. It requires the water sensor connected to zone 1 and used a helper to configure how many zones are enabled on your Gardene water distributor. It will set a persistant variable to indicate the current zone of the distributor.
+For the UI, I used some extentions (but you could also do without it):
+- fold_entity_row for uncluttering the UI
+- Numberbox for easier number selection
+- Secondaryinfo Entity Row for adding secondary_info to some controls
+
