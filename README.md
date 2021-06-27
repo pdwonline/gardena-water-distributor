@@ -1,7 +1,7 @@
-# Home Assistant irrigation using Gardena distributor
+# Home Assistant irrigation using Gardena water distributor
 
 
-This is my project for garden issigation using Home assistant. As an alternative to a complex and expansive set of valves and controllers using Opensprinkler for example, I found an alternative using the [Gardena water distributor](https://www.gardena.com/int/products/watering/water-controls/water-distributor-automatic/966749301/). This device enables me to control up to 6 zones. It is pure mechanical and will switch to the next zone as soon as the water pressure stops. Controlling the device means you have to start/stop the water pressure at a certain sequence. 
+This is my project for garden irrigation using Home assistant. As an alternative to a complex and expansive set of valves and controllers using Opensprinkler for example, I found an alternative using the [Gardena water distributor](https://www.gardena.com/int/products/watering/water-controls/water-distributor-automatic/966749301/). This device enables me to control up to 6 zones. It is pure mechanical and will switch to the next zone as soon as the water pressure stops. Controlling the device means you have to start/stop the water pressure at a certain sequence. 
 
 I was inspired when I saw that Gardena offers a timer controler to automate the process. I wondered how it works bought the Gardena water distributor and started experimenting with it. Now I can use Home Assistant to control the Gardena water distributor and fully automate the irrigation over 6 zones in my garden.
 
