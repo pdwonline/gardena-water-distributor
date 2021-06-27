@@ -15,6 +15,7 @@ Another automation (select and play) selects the desire zone and opens the water
 
 ![UI selecting zone](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_2.png) ![UI selecting zone](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_1.png)
 ![UI configuration](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/Gardena_instellingen.png)
+![UI timer](https://raw.githubusercontent.com/pdwonline/gardena-water-distributor/main/timer.png)
 
 In order to share this project, I am creating blueprints from the automations. Updated soon..
 
